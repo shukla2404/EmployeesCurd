@@ -1,0 +1,14 @@
+﻿@model IEnumerable<EmployeesCurd.Models.Branch>
+@{
+    ViewData["Title"] = "ShowBranch";
+}
+
+<h1>All Branches</h1>
+<ol>
+    @foreach(var branch in Model)
+            {
+                <li><a asp-action="ShowEmployee" asp-controller="Employee" asp-route-id="@branch.Id">@branch.BranchName</a></li>
+            }
+    
+</ol>
+

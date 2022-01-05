@@ -1,0 +1,92 @@
+﻿@model EmployeesCurd.Models.Employee
+@{
+    ViewData["Title"] = "Update Employee Profile";
+}
+
+
+<div class="row">
+    <div class="col-8 offset-2">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <h4>Employee Profile Update</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Update" asp-controller="Employee" method="post">
+                        
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <img src="../../@Model.Image" height="70" width="70" />
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <div class="form-group">
+                                    <label asp-for="Image">Please Select Image</label>
+                                    <input asp-for="Image" class="form-control" />
+                                    <span asp-validation-for="Image" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label asp-for="EName"></label>
+                                    <input asp-for="EName" class="form-control" />
+                                    <input asp-for="Id" class="form-control" type="hidden" />
+                                    <span asp-validation-for="EName" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label asp-for="Email"></label>
+                                    <input asp-for="Email" class="form-control" />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label asp-for="Salary"></label>
+                                    <input asp-for="Salary" class="form-control" type="text" />
+                                    <span asp-validation-for="Salary" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label asp-for="Gender"></label>
+                                    <input asp-for="Gender" class="form-control" />
+                                    <span asp-validation-for="Gender" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col">
+                                <div class="form-group">
+                                    <label asp-for="Address"></label>
+                                    <input asp-for="Address" class="form-control" type="text" />
+                                    <span asp-validation-for="Address" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-outline-info">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,101 @@
+﻿@model EmployeesCurd.Models.ViewModel.CreateBranch
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<div class="row">
+    <div class="col-8 offset-2">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <h4>User Registration</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create" asp-controller="Employee" method="post" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label asp-for="EName"></label>
+                                    <input asp-for="EName" class="form-control" />
+                                    <span asp-validation-for="EName" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label asp-for="Email"></label>
+                                    <input asp-for="Email" class="form-control" />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label asp-for="Salary"></label>
+                                    <input asp-for="Salary" class="form-control" type="text" />
+                                    <span asp-validation-for="Salary" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label asp-for="Gender"></label>
+                                    <input asp-for="Gender" class="form-control" />
+                                    <span asp-validation-for="Gender" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col">
+                                <div class="form-group">
+                                    <label asp-for="Address"></label>
+                                    <input asp-for="Address" class="form-control" type="text" />
+                                    <span asp-validation-for="Address" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Select Branch</label>
+                                    <select name="BranchId" class="form-control">
+
+                                        <option value="">-----Select-----</option>
+                                        @foreach (var cb in ViewBag.branch)
+                                        {
+                                            <option value="@cb.Id">@cb.BranchName</option>
+
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                        <div class="col-8">
+                            <div class="form-group">
+                                <label asp-for="Image">Please Select Image</label>
+                                <input asp-for="Image" class="form-control" />
+                                <span asp-validation-for="Image" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-outline-info">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
